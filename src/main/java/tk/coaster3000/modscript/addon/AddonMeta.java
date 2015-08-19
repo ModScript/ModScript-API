@@ -1,8 +1,6 @@
 package tk.coaster3000.modscript.addon;
 
-import tk.coaster3000.modscript.ModScript;
-
-public interface Addon {
+public interface AddonMeta {
 	/**
 	 * Retrieves the name of the addon.
 	 * @return String
@@ -34,24 +32,4 @@ public interface Addon {
 	 */
 	String[] getAuthors();
 
-	/**
-	 * Returns whether or not the addon is enabled.
-	 * @return boolean
-	 */
-	boolean isEnabled();
-
-	/**
-	 * Called on initialization of the class.
-	 */
-	void init(ModScript modScript);
-
-	/**
-	 * Called when the addon is enabled.
-	 */
-	void enable();
-
-	/**
-	 * Called when the addon is disabled.
-	 */
-	void disable();
 }
