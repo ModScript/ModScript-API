@@ -54,4 +54,14 @@ public interface Addon {
 	 * Called when the addon is disabled.
 	 */
 	void disable();
+
+	/**
+	 * Retrieve the addon getPriority.
+	 *
+	 * <p>
+	 *     Higher values get executed farther down the line.
+	 * </p>
+	 * @return int
+	 */
+	int getPriority();
 }

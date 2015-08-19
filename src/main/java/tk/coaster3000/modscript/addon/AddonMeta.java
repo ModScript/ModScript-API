@@ -32,4 +32,14 @@ public interface AddonMeta {
 	 */
 	String[] getAuthors();
 
+	/**
+	 * Retrieve the addon getPriority.
+	 *
+	 * <p>
+	 *     Higher values get executed farther down the line.
+	 * </p>
+	 * @return int
+	 */
+	int getPriority();
+
 }
