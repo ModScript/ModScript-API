@@ -3,65 +3,70 @@ package tk.coaster3000.modscript.addon;
 import tk.coaster3000.modscript.ModScript;
 
 public interface Addon {
+
 	/**
-	 * Retrieves the name of the addon.
-	 * @return String
+	 * Gets the addon's name.
+	 *
+	 * @return the name
 	 */
 	String getName();
 
 	/**
-	 * Retrieves the addon's description.
-	 * @return String
+	 * Gets the addon's description.
+	 *
+	 * @return the description
 	 */
 	String getDescription();
 
 	/**
-	 * Retrieves the addon's version.
-	 * @return String
+	 * Gets the addon's version.
+	 *
+	 * @return the version
 	 */
 	String getVersion();
 
 	/**
-	 * Retrieves the supported plugin's version. <br/>
-	 * It is used to make sure to inform server owner's that the addon is, or isn't supported by the current version od ModScript.
-	 * @return String
+	 * Gets supported version.
+	 *
+	 * @return the supported version
 	 */
 	String getSupportedVersion();
 
 	/**
-	 * Retrieves an array of authors of this addon.
-	 * @return String Array
+	 * Get the addon's authors.
+	 *
+	 * @return the string [ ]
 	 */
 	String[] getAuthors();
 
 	/**
-	 * Returns whether or not the addon is enabled.
-	 * @return boolean
+	 * Gets whether or not the addon is enabled.
+	 *
+	 * @return the boolean
 	 */
 	boolean isEnabled();
 
 	/**
-	 * Called on initialization of the class.
+	 * Called by ModScript when initializing the addon.
+	 *
+	 * @param modScript the mod script
 	 */
 	void init(ModScript modScript);
 
 	/**
-	 * Called when the addon is enabled.
+	 * Called by ModScript when enabling the addon.
 	 */
 	void enable();
 
 	/**
-	 * Called when the addon is disabled.
+	 * Called by ModScript when disabling the addon.
 	 */
 	void disable();
 
 	/**
-	 * Retrieve the addon getPriority.
+	 * Gets the addon's priority.
 	 *
-	 * <p>
-	 *     Higher values get executed farther down the line.
-	 * </p>
-	 * @return int
+	 * @return the priority
 	 */
 	int getPriority();
 }
