@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ModScript/ModScript-API.png?label=ready&title=Ready)](https://waffle.io/ModScript/ModScript-API)
 # ModScript
 Modscript is a project to provide an easy scripting system to minecraft. Mainly the server side.
 
