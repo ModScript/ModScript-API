@@ -1,7 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/ModScript/ModScript-API.png?label=ready&title=Ready)![Stories in Progress](https://badge.waffle.io/ModScript/ModScript-API.png?label=in%20progress&title=WIP)![Stories Pending](https://badge.waffle.io/ModScript/ModScript-API.png?label=review&title=Review)
-](https://waffle.io/ModScript/ModScript-API)
-
-![Throughput Graph](https://graphs.waffle.io/ModScript/ModScript-API/throughput.svg)
+[![Build Status](https://travis-ci.org/ModScript/ModScript-API.svg?branch=master)](https://travis-ci.org/ModScript/ModScript-API)
 # ModScript
 Modscript is a project to provide an easy scripting system to minecraft. Mainly the server side.
 
