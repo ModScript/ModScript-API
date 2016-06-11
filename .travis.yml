@@ -1,6 +1,4 @@
 language: scala
-install:
-- gradle test
 
 #Currently not deploying...
 #before_deploy:
