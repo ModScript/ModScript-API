@@ -1,0 +1,13 @@
+language: scala
+branches:
+  only:
+  - master
+  - "/^testbuild-.*$/"
+install:
+- gradle test
+
+#Currently not deploying...
+#before_deploy:
+#- gradle assemble
+git:
+  depth: 5
