@@ -1,8 +1,4 @@
 language: scala
-branches:
-  only:
-  - master
-  - "/^testbuild-.*$/"
 install:
 - gradle test
 
