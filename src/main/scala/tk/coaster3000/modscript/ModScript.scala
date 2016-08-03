@@ -30,6 +30,22 @@ abstract class ModScript {
 		}
 	}
 
+	def clearAddons():Unit = getAddons.keys.foreach(name=> {
+		this.removeAddon(name)
+	})
+
+	def removeAddon(_addon: String) = {
+		val mappedAddon = addons remove _addon
+		if (mappedAddon.nonEmpty) {
+			val addon = mappedAddon.get
+			try {
+				addon.disable()
+			} catch {
+				case e: Throwable => reportAddon(new AddonDisableException(addon, e))
+			}
+		}
+	}
+
 	def removeAddon(_addon: Addon) = {
 		val mappedAddon = addons remove _addon.getName
 		if (mappedAddon.nonEmpty) {
