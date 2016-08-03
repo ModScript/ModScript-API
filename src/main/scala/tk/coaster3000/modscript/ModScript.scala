@@ -10,7 +10,7 @@ abstract class ModScript {
 
 	private val addons = collection.mutable.Map[String, Addon]()
 
-	protected def getAddons() = addons
+	protected def getAddons = addons
 
 	def getAddon(addonName: String) = addons.get(addonName).orNull
 
@@ -22,6 +22,7 @@ abstract class ModScript {
 	@throws[AddonAlreadyExistsException]
 	def addAddon(addon: Addon) = {
 		if (addons contains addon.getName) throw new AddonAlreadyExistsException(addon)
+		if (!(addon isInitialized)) addon.init(this)
 		try {
 			addon.enable()
 			addons.put(addon.getName, addon)
