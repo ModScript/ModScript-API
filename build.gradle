@@ -77,13 +77,14 @@ tasks.withType(ScalaCompile) {
 
 test {
 	useTestNG() {
-		suiteXmlBuilder().suite(name: 'gradle-testng-mockito-bootstrap', parallel: 'tests') {
-			test (name : 'all-tests') {
-				packages {
-					'package' (name: 'tk.coaster3000.*')
-				}
-			}
-		}
+		suites 'src/test/resources/testng.xml'
+//		suiteXmlBuilder().suite(name: 'gradle-testng-mockito-bootstrap', parallel: 'tests') {
+//			test (name : 'all-tests') {
+//				packages {
+//					'package' (name: 'tk.coaster3000.*')
+//				}
+//			}
+//		}
 	}
 	options {
 		listeners << 'org.uncommons.reportng.HTMLReporter'
