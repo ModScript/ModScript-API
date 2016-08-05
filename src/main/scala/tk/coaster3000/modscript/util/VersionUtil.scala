@@ -16,8 +16,8 @@ object VersionUtil {
 
 		def isCompatibleWith(o: Version): Boolean = {
 			if (major == 0 || o.major == 0) return this == o
-			if (major != o.major) minor <= o.minor
-			else true
+			if (major != o.major) false
+			else minor <= o.minor
 		}
 	}
 
