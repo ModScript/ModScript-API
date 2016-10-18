@@ -1,12 +1,16 @@
 package tk.coaster3000.modscript
 
-import tk.coaster3000.modscript.addon.{Addon, WrappedAddonException}
+import tk.coaster3000.modscript.addon.{Addon, AddonDisableException, AddonEnableException, WrappedAddonException}
 import tk.coaster3000.modscript.logging.LogLevel
-import tk.coaster3000.modscript.util.AddonAlreadyExistsException
+import tk.coaster3000.modscript.util.{AddonAlreadyExistsException, VersionUtil}
+import tk.coaster3000.modscript.util.VersionUtil.Version
 
 abstract class ModScript {
 	def reportAddon(wrappedAddonException: WrappedAddonException)
 	def log(addon: Addon = null, logLevel: LogLevel, msg: String)
+
+	def getVersionString(): String
+	def getVersion(): Version = VersionUtil.parse(getVersionString)
 
 	private val addons = collection.mutable.Map[String, Addon]()
 
@@ -27,7 +31,7 @@ abstract class ModScript {
 			addon.enable()
 			addons.put(addon.getName, addon)
 		} catch {
-			case e: Throwable => reportAddon(new WrappedAddonException(addon, e))
+			case e: Throwable => reportAddon(new AddonEnableException(addon, e))
 		}
 	}
 
@@ -54,7 +58,7 @@ abstract class ModScript {
 			try {
 				addon.disable()
 			} catch {
-				case e: Throwable => reportAddon(new WrappedAddonException(addon, e));
+				case e: Throwable => reportAddon(new AddonDisableException(addon, e));
 			}
 		}
 	}

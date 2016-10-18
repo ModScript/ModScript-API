@@ -1,9 +1,14 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="All Tests">
 	<test name="Version Parse Test">
-		
 		<classes>
 			<class name="tk.coaster3000.modscript.VersionParsingTest"/>
+		</classes>
+	</test>
+
+	<test name="Addon API Test">
+		<classes>
+			<class name="tk.coaster3000.modscript.AddonInitializationTest"/>
 		</classes>
 	</test>
 </suite>
